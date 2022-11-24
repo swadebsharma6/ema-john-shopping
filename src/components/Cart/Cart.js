@@ -3,8 +3,8 @@ import Product from '../Product/Product';
 import './Cart.css'
 
 const Cart = (props) => {
-    const {cart} = props;
-    // console.log(cart)
+    const {cart, clearCart, children} = props;
+    console.log('cart', cart)
     let total= 0;
     let shipping = 0;
     let quantity = 0;
@@ -24,8 +24,9 @@ const Cart = (props) => {
             <p>Total Price: ${total}</p>
             <p>Total Shipping: ${shipping} </p>
             <p>Tax: ${tax}</p>
-
             <h3>Grand Total: {grandTotal.toFixed(2)} </h3>
+            <button onClick={clearCart}>Clear Cart</button>
+            {children}
         </div>
     );
 };
